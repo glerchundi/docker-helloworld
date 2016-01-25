@@ -1,1 +1,3 @@
-FROM google/golang-runtime
+FROM busybox
+ADD bin/helloworld-linux-amd64 /helloworld
+ENTRYPOINT [ "/helloworld" ]

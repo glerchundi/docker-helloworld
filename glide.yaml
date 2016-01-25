@@ -1,0 +1,7 @@
+package: github.com/glerchundi/helloworld
+import:
+- package: github.com/codegangsta/envy
+  subpackages:
+  - /autoload
+- package: github.com/codegangsta/negroni
+- package: github.com/julienschmidt/httprouter

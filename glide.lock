@@ -1,0 +1,12 @@
+hash: 4a293653a1a9bbcf26a6a5b16206226b2f7e34fb0845d387b822c83a72326c2e
+updated: 2016-01-20T13:56:06.556841585+01:00
+imports:
+- name: github.com/codegangsta/envy
+  version: 4b78388c8ce4fa412440ca4eaa654e2fdd752e49
+  subpackages:
+  - /autoload
+- name: github.com/codegangsta/negroni
+  version: c7477ad8e330bef55bf1ebe300cf8aa67c492d1b
+- name: github.com/julienschmidt/httprouter
+  version: 21439ef4d70ba4f3e2a5ed9249e7b03af4019b40
+devImports: []
