@@ -1,22 +1,31 @@
 package main
 
 import (
-  _ "github.com/codegangsta/envy/autoload"
-  "github.com/codegangsta/envy/lib"
   "github.com/codegangsta/negroni"
   "github.com/julienschmidt/httprouter"
   "net/http"
   "os"
+  "time"
 )
 
 func main() {
+  ds := os.Getenv("DELAY")
+  if ds != "" {
+    if d, err := time.ParseDuration(ds); err == nil {
+      time.Sleep(d)
+    }
+  }
+  p := os.Getenv("PORT")
+  if p == "" {
+    p = "8080"
+  }
   n := negroni.Classic()
   r := httprouter.New()
 
   r.GET("/", HelloWorld)
 
   n.UseHandler(r)
-  n.Run(":" + envy.MustGet("PORT"))
+  n.Run(":" + p)
 }
 
 func HelloWorld(rw http.ResponseWriter, r *http.Request, params httprouter.Params) {
